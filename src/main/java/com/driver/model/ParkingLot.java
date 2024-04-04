@@ -7,7 +7,7 @@ import java.util.List;
 public class ParkingLot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String name;
     private String address;
@@ -15,11 +15,21 @@ public class ParkingLot {
     @OneToMany(mappedBy = "parkingLot",cascade = CascadeType.ALL)
     List<Spot> spotList;
 
-    public int getId() {
+    public ParkingLot(Integer id, String name, String address, List<Spot> spotList) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.spotList = spotList;
+    }
+    public ParkingLot() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn
@@ -22,11 +22,29 @@ public class Reservation {
 
     private int numberOfHours;
 
-    public int getId() {
+    public Reservation(Integer id, int numberOfHours, int bill, User user, Spot spot, Payment payment) {
+
+        this.id = id;
+
+        this.numberOfHours = numberOfHours;
+
+        this.user = user;
+
+        this.spot = spot;
+
+        this.payment = payment;
+
+    }
+
+    public Reservation() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
