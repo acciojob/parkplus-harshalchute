@@ -13,6 +13,7 @@ public class UserController {
     UserServiceImpl userService;
     @PostMapping("/register")
     public ResponseEntity<Void> registerUser(@RequestParam String name, @RequestParam String phoneNumber, @RequestParam String password){
+        userService.register(name, phoneNumber, password);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
