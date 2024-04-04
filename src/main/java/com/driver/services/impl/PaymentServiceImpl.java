@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 public class PaymentServiceImpl implements PaymentService {
     @Autowired
     ReservationRepository reservationRepository2;
-    @Autowired
-    PaymentRepository paymentRepository2;
 
     @Override
     public Payment pay(Integer reservationId, int amountSent, String mode) throws Exception {

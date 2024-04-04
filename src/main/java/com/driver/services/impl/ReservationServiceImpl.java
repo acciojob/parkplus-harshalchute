@@ -20,8 +20,6 @@ public class ReservationServiceImpl implements ReservationService {
     @Autowired
     SpotRepository spotRepository3;
     @Autowired
-    ReservationRepository reservationRepository3;
-    @Autowired
     ParkingLotRepository parkingLotRepository3;
     @Override
     public Reservation reserveSpot(Integer userId, Integer parkingLotId, Integer timeInHours, Integer numberOfWheels) throws Exception {
