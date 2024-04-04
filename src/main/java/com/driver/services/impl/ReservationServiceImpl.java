@@ -29,14 +29,14 @@ public class ReservationServiceImpl implements ReservationService {
         try {
             user = userRepository3.findById(userId).get();
         }catch (Exception e){
-            throw new Exception("User not found");
+            throw new Exception("Cannot make Reservation");
         }
 
         ParkingLot parkingLot;
         try {
             parkingLot = parkingLotRepository3.findById(parkingLotId).get();
         }catch (Exception e){
-            throw new Exception("Parking lot not found");
+            throw new Exception("Cannot make Reservation");
         }
 
         ArrayList<Spot> spotArrayList = new ArrayList<>();
