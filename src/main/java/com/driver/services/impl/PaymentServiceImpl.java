@@ -24,14 +24,14 @@ public class PaymentServiceImpl implements PaymentService {
         try{
             reservation = reservationRepository2.findById(reservationId).get();
         }catch (Exception e){
-            throw new Exception("Reservation not found !!");
+            throw new Exception("Reservation not found");
         }
 
         Payment payment = new Payment();
         int bill = reservation.getNumberOfHours() * reservation.getSpot().getPricePerHour();
 
         if(bill > amountSent){
-            throw new Exception("Insufficient Amount !!");
+            throw new Exception("Insufficient Amount");
         }
 
         if(mode.equalsIgnoreCase("cash")){
@@ -41,7 +41,7 @@ public class PaymentServiceImpl implements PaymentService {
         }else if(mode.equalsIgnoreCase("card")){
             payment.setPaymentMode(PaymentMode.CARD);
         }else{
-            throw new Exception("Payment mode not detected !!");
+            throw new Exception("Payment mode not detected");
         }
 
         payment.setPaymentCompleted(true);

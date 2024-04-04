@@ -29,14 +29,14 @@ public class ReservationServiceImpl implements ReservationService {
         try {
             user = userRepository3.findById(userId).get();
         }catch (Exception e){
-            throw new Exception("User not found !!");
+            throw new Exception("User not found");
         }
 
         ParkingLot parkingLot;
         try {
             parkingLot = parkingLotRepository3.findById(parkingLotId).get();
         }catch (Exception e){
-            throw new Exception("Parking lot not found !!");
+            throw new Exception("Parking lot not found");
         }
 
         ArrayList<Spot> spotArrayList = new ArrayList<>();
@@ -57,7 +57,7 @@ public class ReservationServiceImpl implements ReservationService {
         }
 
         if(spotArrayList.isEmpty()){
-            throw new Exception("Cannot make Reservation !!");
+            throw new Exception("Cannot make Reservation");
         }
 
 //        spotArrayList.sort((a,b) -> (a.getPricePerHour() - b.getPricePerHour()));
